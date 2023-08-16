@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    
+    
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+  </head>
+  <body onload="document.frmEnviarDados.nome.focus()">
+    <div class="frmTelaInteira">
+    <h1>Formulário de cadastro</h1>
+
+    <form name="frmEnviarDados" class="cadGeral" me enctype="multipart/form-data">
+        
+      <div class="frmCadastro">
+        <label for="nascimento"><strong>Dados Gerais</strong></label><br>
+        <input type="text" name="nome" id="nome" class="txtnome" placeholder="Nome" required>
+        <input type="text" name="sobrenome" id="sobrenome" class="txtsobrenome" placeholder="Sobrenome" required>
+        <input type="text" name="cep" class="txtcep" id="cep" placeholder="CEP" onblur="formatarCep(this)" required>
+        <input type="text" name="rua" class="txtrua" id="rua" placeholder="Rua" readonly>
+        <input type="text" name="numero" class="txtnumero" id="numero" placeholder="Nº" required>
+        <input type="text" name="bairro" class="txtbairro" id="bairro" placeholder="Bairro" readonly>
+        <input type="text" name="cidade" class="txtcidade" id="cidade" placeholder="Cidade" readonly>
+        <input type="text" name="estado" class="txtestado" id="estado" placeholder="Estado" readonly>
+        <input type="email" name="email" class="txtemail" id="email" placeholder="você@seuemail.com" required>
+        <input type="password" name="senha" class="txtnovasenha" id="senha" placeholder="Nova Senha" required><br>
+      </div>
+
+      <div class="frmNasci">
+        <label for="nascimento"><strong>Nascimento</strong></label><br />
+        <input type="date" id="nascimento" name="nascimento" /><br />
+      </div>
+
+      <div class="frmgenero">
+        <label for="genero"><strong>Gênero</strong></label><br />
+        <label for="masculino">Masculino</label>
+        <input type="radio" id="masculino" name="genero">
+        <label for="feminino">Feminino</label>
+        <input type="radio" id="feminino" name="genero">
+        <label for="naobinario">Não Binário</label>
+        <input type="radio" id="naobinario" name="genero">
+      </div>
+
+      <div class="frmImg">
+        <label for="Img"><strong>Escolha um arquivo para seu avatar</strong></label><br>
+        <input type="file">
+      </div>
+
+      <div class="frmbotaosalvar">
+        <button class="btnSalvar">Cadastre-se</button>
+      </div>
+
+    </div>
+    
+    </form>
+
+      <script src="./mascaras.js"></script>
+      <script src="./cep.js"></script>
+
+  </body>
+
+
+</html>
+
